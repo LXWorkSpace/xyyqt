@@ -1,0 +1,49 @@
+/* miniprogram/pages/index/index.wxss */
+
+/*swiper样式*/
+
+
+.slide-image{
+  width: 100%;
+  border-top:1px solid #DDDDDD;
+  border-bottom:1px solid #DDDDDD;
+}
+
+
+.list-title{
+  margin-top: 5px;
+  padding:10px;
+  border-top:1px solid #DDDDDD;
+  border-bottom:1px solid #DDDDDD;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.list-title-left{
+  font-weight: 700;
+  font-size: 15px;
+}
+.list-title-right{
+  font-size: small;
+  line-height: 20px;
+  color:#CCCCCC;
+}
+
+.list-item{
+  background-color: white;
+  padding:10px;
+  border-bottom:1px solid #DDDDDD;
+}
+
+.news-title{
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.news-info{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color:#AAAAAA
+}

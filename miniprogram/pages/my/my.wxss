@@ -1,0 +1,79 @@
+/* pages/my/my.wxss */
+.login{
+  background-color:white;
+  height: 220rpx;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom:1px solid #DDDDDD
+}
+
+
+.icon{
+  width: 150rpx;
+  height: 150rpx;
+  margin: 35rpx;
+  border-radius: 50%;
+}
+
+.nickName{
+  margin-top:40rpx;
+  font-weight: 550;
+  color: #555555;
+  font-family: microsoft yahei;
+  font-size: 18px;
+}
+
+.loginBtn{
+  opacity: 0;
+  height: 220rpx;
+  width: 100%;
+  position: fixed;
+}
+
+.infoId{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 13px;
+  color: #999999;
+  margin-top: 5px;
+}
+
+.info{
+  display: flex;
+  flex-direction:column;
+}
+
+.signOut-cont{
+  height: 45px;
+  background-color: white;
+  margin-top: 5px;
+  border-top:1px solid #DDDDDD;
+  border-bottom:1px solid #DDDDDD;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.text{
+  padding-top: 10px;
+  padding: 10px 0px 10px 0px;
+  font-size: 15px;
+}
+
+.image{
+  width: 20px;
+  height: 20px;
+  padding:10px 10px 10px 15px;
+}
+
+.shenpi-cont{
+  margin-top: 5px;
+  border-top:1px solid #DDDDDD;
+}
+.shenpi{
+  height: 45px;
+  background-color: white;
+  border-bottom:1px solid #DDDDDD;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

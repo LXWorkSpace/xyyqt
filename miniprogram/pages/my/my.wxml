@@ -1,0 +1,48 @@
+<!--pages/my/my.wxml-->
+<view class='login'>
+  <block wx:if='{{isLogin}}'>
+    <image class='icon' src='{{src}}'></image>
+
+    <view class="info">
+      <text class='nickName'>{{nickName}}</text>
+      <block wx:if='{{isBindId}}'>
+        <text class='infoId'>{{userType}}:{{userId}}</text>
+      </block>
+      <block wx:else>
+       <navigator url="../my/Login/login" class='infoId'>点击绑定学号/工号</navigator>
+      </block>
+    </view>
+  </block>
+
+
+  <block wx:else>
+    <image class='icon' src='{{src}}' ></image>
+    <text class='nickName'>{{nickName}}</text>
+    <button bindtap="getlogin" class="loginBtn"></button>
+  </block>
+</view>
+
+<block wx:if='{{isBindId && userType=="工号"}}'>
+  <view class="shenpi-cont">
+    <view cxsp-cont class="shenpi"> <!--出校审批-->
+    <image src='{{shenpisrc}}' class='image'></image>
+    <text class="text">出校申请审批</text>
+  </view>
+  <view cxsp-cont class="shenpi"> <!--出校审批-->
+    <image src='{{shenpisrc}}' class='image'></image>
+    <text class="text">疫苗预约审批</text>
+  </view>
+  <view cxsp-cont class="shenpi"> <!--出校审批-->
+    <image src='{{shenpisrc}}' class='image'></image>
+    <text class="text">信息修改审批</text>
+  </view>
+  </view>
+</block>
+
+<block wx:if='{{isBindId}}'>
+  <view class="signOut-cont" bindtap="signout">
+    <image src='{{outsrc}}' class='image'></image>
+    <text class="text">解绑{{userType}}</text>
+  </view>
+</block>
+

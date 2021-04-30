@@ -1,0 +1,60 @@
+/* miniprogram/pages/my/Login/login.wxss */
+
+.cont{
+  background-color: #E3F8F3;
+  height: 100vh;
+}
+
+.title{
+  height: 400rpx;
+  color: #47D1AF;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 400rpx;
+  text-align: center;
+
+}
+
+.input-cont{
+  line-height: 45px; 
+  border-radius:20px;
+  border:1px solid #999999;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 10px auto 10px auto;
+
+}
+
+#userId{
+  width: 60%;
+  margin: auto 10px auto 0px;
+
+}
+#passWord{
+  width: 60%;
+  margin: auto 10px auto 0px;
+}
+
+
+.login-name{
+  padding-left: 12px;
+}
+
+.radio-cont{
+  text-align: center;
+  margin: 30px 0px 30px 0px;
+}
+.radio{
+  margin:0px 20px 0px 20px
+}
+
+.loginBtn{
+  width: 80%;
+  border-radius: 20px;
+  background-color: #47D1AF;
+  color: white;
+  font-weight: 550;
+  margin-top: 50px;
+}

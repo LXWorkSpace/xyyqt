@@ -1,0 +1,38 @@
+/* miniprogram/pages/inform/pub/pub.wxss */
+.pub-title{
+  background-color: white;
+  border:1px solid #dddddd;
+  width: 90%;
+  margin: 15px auto 0px auto;
+}
+#pub-title{
+  padding: 10px;
+  font-size: 14px;
+}
+
+.pub-cont{
+  background-color: white;
+  border:1px solid #dddddd;
+  width: 90%;
+  margin: 15px auto 0px auto;
+}
+#pub-cont{
+  padding: 10px;
+  font-size: 14px;
+}
+.wordCount{
+  display: flex;
+  justify-content: flex-end;
+  color: #cccccc;
+  font-size: 12px;
+  margin: 12px;
+}
+
+.submit{
+  background-color: #47D1AF;
+  width: 60%;
+  margin-top: 20px;
+  color: white;
+  font-weight: 550;
+  border-radius: 10px;
+}

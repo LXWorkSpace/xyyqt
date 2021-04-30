@@ -1,0 +1,11 @@
+<!--miniprogram/pages/inform/pub/pub.wxml-->
+<view class='pub-title'>
+<input type="text" id='pub-title' placeholder="通知标题" bindinput="title_input" maxlength="20" value="{{pubtitle}}"/>
+</view>
+
+<view class="pub-cont">
+<textarea id="pub-cont" placeholder="通知内容" maxlength='300' bindinput="cont_input" value="{{pubcont}}"/>
+<text class="wordCount">已输入{{wordCount}}/300</text>
+</view>
+
+<button class="submit" bindtap="submit"> 确认发布</button>

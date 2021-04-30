@@ -1,0 +1,35 @@
+<!--miniprogram/pages/my/Login/login.wxml-->
+
+<view class="cont">
+  <view class="title">
+    <text>校园疫情通</text>
+  </view>
+
+  <view class="login">
+    <view class="input-cont">
+      <lable class="login-name">学号/工号</lable>
+      <input type="text" id="userId" placeholder="请输入学号/工号" bindinput="useridInput"/>
+    </view>
+    <view class="input-cont">      
+      <lable class="login-name">密码</lable>
+      <input type="password" id="passWord" placeholder="请输入密码" bindinput="passwordInput"/>
+    </view>
+  </view>
+
+  <radio-group bindchange="radioChange">
+    <view class="radio-cont">
+      <label class="radio" wx:for="{{items}}" wx:for-item="item" wx:key="id" data-index="{{index}}" bindtap="radioInfo">
+        <radio value="{{item.value}}" checked="{{item.checked}}"/>
+        <text>{{item.name}}</text>
+      </label>
+    </view>
+
+  </radio-group>
+
+
+
+  <view class="loginBtn-cont">
+    <button bindtap="loginBtn" class="loginBtn">登录</button>
+  </view>
+
+</view>

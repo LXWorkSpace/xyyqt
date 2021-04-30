@@ -1,0 +1,18 @@
+/* miniprogram/pages/more/more.wxss */
+.list-item{
+  background-color: white;
+  padding:10px;
+  border-bottom:1px solid #DDDDDD;
+}
+
+.news-title{
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.news-info{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color:#AAAAAA
+}

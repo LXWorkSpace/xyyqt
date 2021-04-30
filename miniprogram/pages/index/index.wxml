@@ -1,0 +1,29 @@
+<!--miniprogram/pages/index/index.wxml-->
+<!--幻灯片滚动-->
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="500"> 
+  <block wx:for="{{swiperImg}}" wx:for-item="item" wx:key='src'>
+    <swiper-item>
+      <image src="{{item.src}}" class="slide-image" mode="widthFix"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--新闻列表-->
+<view id='news-list'>
+  <view class="list-title">
+    <text class="list-title-left">新闻资讯</text>
+    <navigator class="list-title-right" url="../../pages/index/more/more">查看更多</navigator>
+  </view>
+
+  <view class='list-item' wx:for="{{newsList}}" wx:for-item="news" wx:key="key" bindtap="newsClick" data-index="{{index}}">
+
+      <view class='news-title' >{{news.title}}</view>
+      <view class='news-info'>
+        <text>{{news.infoSource}}</text>
+        <text>{{news.pubDateStr}}</text>
+      </view>
+
+
+  </view>
+
+</view>

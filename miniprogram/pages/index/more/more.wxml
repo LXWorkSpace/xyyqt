@@ -1,0 +1,13 @@
+<!--miniprogram/pages/more/more.wxml-->
+<view id='news-list'>
+
+    <view class='list-item' wx:for="{{newsList}}" wx:for-item="news" wx:key="key" bindtap="newsClick" data-index="{{index}}">
+      <view class='news-title'>{{news.title}}</view>
+      <view class='news-info'>
+        <text>{{news.infoSource}}</text>
+        <text>{{news.pubDateStr}}</text>
+      </view>
+    </view>
+
+
+</view>

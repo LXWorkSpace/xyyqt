@@ -1,0 +1,17 @@
+<!--miniprogram/pages/inform/inform.wxml-->
+<image src="{{src}}" class="image" mode="widthFix"/>
+
+  <view class="list-title">
+    <text class="list-title-left">通知公告</text>
+    <image src="{{addBtn_src}}" class="btn" mode="widthFix" bindtap="addBtn"/>
+  </view>
+<view class="inform-list"  wx:for="{{informList}}" wx:for-item="inform" wx:key="id">
+  <view class="inform-cont" >
+    <view bindtap="clickBtn" class="title-cont" id='{{inform._id}}'>
+      <view class="inform-title">{{inform.title}}</view>
+      <text class="public-time">{{inform.pubTime}}</text>
+    </view>
+    <image src="{{delBtn_src}}" class="delete btn" mode="widthFix" bindtap="delBtn" id='{{inform._id}}'></image>
+  </view>  
+
+</view>

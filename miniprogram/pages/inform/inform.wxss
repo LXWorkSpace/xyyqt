@@ -1,0 +1,57 @@
+/* miniprogram/pages/inform/inform.wxss */
+.image{
+  width: 100%;
+  border-top:1px solid #DDDDDD;
+  border-bottom:1px solid #DDDDDD;
+}
+
+
+.list-title{
+  font-weight: 700;
+  padding:10px;
+  border-top:1px solid #DDDDDD;
+  border-bottom:1px solid #DDDDDD;
+  background-color: white;
+  font-size: 15px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between
+}
+
+.btn{
+  width: 20px;
+}
+
+.inform-list{
+ background-color: white; 
+ border-bottom: 1px solid #dddddd;
+ padding: 2px;
+ line-height: 30px;
+ font-size: 16px;
+
+}
+
+.inform-cont{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-cont{
+  width: 100%;
+}
+
+.inform-title{
+  margin-left: 10px;
+  padding: 8px 0px 5px 0px;
+}
+
+.public-time{
+  margin-left: 10px;
+  color: #aaaaaa;
+  font-size: 13px;
+}
+
+.delete{
+  padding:10px;
+}

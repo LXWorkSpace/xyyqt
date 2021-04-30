@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/inform/inform",
+    "pages/static/static",
+    "pages/my/my",
+    "pages/index/more/more",
+    "pages/index/more/detail/detail",
+    "pages/my/Login/login",
+    "pages/inform/pub/pub"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#efefef",
+    "navigationBarTitleText": "校园疫情通",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fefefe",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#47D1AF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/shouye.png",
+        "selectedIconPath": "images/shouye_ed.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/inform/inform",
+        "iconPath": "images/tongzhi.png",
+        "selectedIconPath": "images/tongzhi_ed.png",
+        "text": "通知"
+      },
+      {
+        "pagePath": "pages/static/static",
+        "iconPath": "images/tongji.png",
+        "selectedIconPath": "images/tongji_ed.png",
+        "text": "统计"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/wode.png",
+        "selectedIconPath": "images/wode_ed.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap29.json"
+}
