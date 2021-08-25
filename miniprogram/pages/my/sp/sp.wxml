@@ -1,0 +1,44 @@
+<!--miniprogram/pages/my/sp/sp.wxml-->
+<block wx:if="{{type == 'goout'}}">
+  <view wx:if="{{spList.length == 0}}" class="title-cont">
+    <view class="info-cont">
+      <view class="reason">无申请审批</view>
+    </view>
+  </view>
+  <view  wx:for="{{spList}}" wx:item="{{item}}" class="title-cont" wx:key="id">
+    <view bindtap="clickBtn" class="info" id='{{item._id}}'>
+      <view class="info-cont">
+          <text class="time-cont">{{item.goout.time}}</text>
+          <text class="sp-color" decode="{{true}}">待审批&nbsp;●</text>
+      </view>
+      <view class="info-cont">
+        <view class="reason">{{item.goout.reason}}</view>
+        <view class="name">申请人：{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+
+</block>
+
+<block wx:if="{{type == 'vaccine'}}">
+  <view wx:if="{{spList.length == 0}}" class="title-cont">
+    <view class="info-cont">
+      <view class="reason">无申请审批</view>
+    </view>
+  </view>
+  <view wx:for="{{spList}}" wx:item="{{item}}"  class="title-cont" id='{{item._id}}'  wx:key="id">
+    <view bindtap="clickBtn" class="info" id='{{item._id}}'>
+      <view class="info-cont">
+          <text class="time-cont">{{item.vaccine.time}}</text>
+          <text class="sp-color" decode="{{true}}">待审批&nbsp;●</text>
+      </view>
+      <view class="info-cont">
+        <view class="reason">{{item.vaccine.vindex == 1? '第一针疫苗接种申请' : '第二针疫苗接种申请'}}</view>
+        <view class="name">申请人：{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+
+
+

@@ -1,46 +1,66 @@
 <!--pages/my/my.wxml-->
-<view class='login'>
-  <block wx:if='{{isLogin}}'>
+<view class="background">
+  <text class="background-text">个人中心</text>
+</view>
+<view class='login' wx:if="{{isLogin}}">
+  <view>
     <image class='icon' src='{{src}}'></image>
-
-    <view class="info">
-      <text class='nickName'>{{nickName}}</text>
-      <block wx:if='{{isBindId}}'>
-        <text class='infoId'>{{userType}}:{{userId}}</text>
-      </block>
-      <block wx:else>
-       <navigator url="../my/Login/login" class='infoId'>点击绑定学号/工号</navigator>
-      </block>
-    </view>
-  </block>
-
-
-  <block wx:else>
-    <image class='icon' src='{{src}}' ></image>
+  </view>
+  <view class="info">
     <text class='nickName'>{{nickName}}</text>
-    <button bindtap="getlogin" class="loginBtn"></button>
-  </block>
+    <block wx:if='{{isBindId}}'>
+      <text class='infoId'>{{userType}}:{{userId}}</text>
+    </block>
+    <block wx:else>
+      <navigator url="../my/Login/login" class='infoId'>点击绑定学号/工号</navigator>
+    </block>
+  </view>
+  <view wx:if="{{isBindId && userType == '学号'}}" style="display:flex;align-items:center;margin-right:20px" bindtap="update" class="v-shezhi"> 
+      <image src="../../images/shezhi.png" mode="widthFix" class="shezhi"></image>  
+  </view>
 </view>
 
+<view class='login' wx:else bindtap="getlogin">
+  <view>
+    <image class='icon' src='{{src}}' ></image>
+  </view>
+  <view class="info">
+    <text class='nickName'>{{nickName}}</text>
+  </view>
+</view>
+
+
+
 <block wx:if='{{isBindId && userType=="工号"}}'>
-  <view class="shenpi-cont">
-    <view cxsp-cont class="shenpi"> <!--出校审批-->
-    <image src='{{shenpisrc}}' class='image'></image>
+
+  <view class="shenpi" bindtap="cxsp"> <!--出校审批-->
+    <image src='{{shenpisrc}}' class='image border-bottom'></image>
     <text class="text">出校申请审批</text>
   </view>
-  <view cxsp-cont class="shenpi"> <!--出校审批-->
-    <image src='{{shenpisrc}}' class='image'></image>
+  <view class="shenpi" bindtap="ymsp"> <!--疫苗审批-->
+    <image src='{{shenpisrc}}' class='image border-bottom'></image>
     <text class="text">疫苗预约审批</text>
   </view>
-  <view cxsp-cont class="shenpi"> <!--出校审批-->
-    <image src='{{shenpisrc}}' class='image'></image>
-    <text class="text">信息修改审批</text>
+
+
+</block>
+<block wx:if='{{isBindId && userType=="学号"}}'>
+
+  <view class="shenpi  border-bottom" bindtap="cxsq">
+    <image src='{{chuxiaosrc}}' class='image' ></image>
+    <text class="text">我的出校申请</text>
   </view>
+  <view class="shenpi  border-bottom" bindtap="ymsq">
+    <image src='{{yimiaosrc}}' class='image' ></image>
+    <text class="text">我的疫苗申请</text>
   </view>
+
+
 </block>
 
+
 <block wx:if='{{isBindId}}'>
-  <view class="signOut-cont" bindtap="signout">
+  <view class="shenpi" bindtap="signout">
     <image src='{{outsrc}}' class='image'></image>
     <text class="text">解绑{{userType}}</text>
   </view>

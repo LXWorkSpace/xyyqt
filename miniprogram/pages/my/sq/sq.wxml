@@ -1,0 +1,23 @@
+<!--miniprogram/pages/my/cxsq/cxsq.wxml-->
+<view class="cont">
+  <image class="img" src="{{src[index]}}" mode="widthFix"></image>
+  <view class="res">
+    {{res[index]}}
+  </view>
+  <view class="progress">
+    <view>
+      <view class="border v1 {{index>=0?'full':''}}"></view>
+      <view>未申请</view>
+    </view>
+    <view>
+      <view class="border v2 {{index>=1?'full':''}}"></view>
+      <view>待审批</view>
+    </view>
+    <view>
+      <view class="border v3 {{index>=2?'full':''}}"></view>
+      <view>申请已通过</view>
+    </view>
+  </view>
+</view>
+
+<button class="backBtn" bindtap="backBtn">返回首页</button>

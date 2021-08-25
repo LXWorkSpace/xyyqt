@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="inputContent">
+    <view  class="inputRow">
+      姓名<input type="text" class="input" value="{{name}}" bindinput="nameInput"></input>
+    </view>
+    <view class="inputRow">
+      学号<input type="text" class="input" value="{{id}}" bindinput="idInput"></input>
+    </view>
+    <view class="inputRow">
+      学院<input type="text" class="input" value="{{college}}" bindinput="collegeInput"></input>
+    </view>
+  </view>
+  <view>
+    <button bindtap="saiourukou">赛欧(入口)</button>
+  <button bindtap="saiouchukou">赛欧(出口)</button>
+  <button bindtap="beimenrukou">北门(入口)</button>
+  <button bindtap="beimenchukou">北门(出口)</button>
+  </view>
+
+</view>

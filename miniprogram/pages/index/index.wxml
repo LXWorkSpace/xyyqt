@@ -1,3 +1,4 @@
+
 <!--miniprogram/pages/index/index.wxml-->
 <!--幻灯片滚动-->
 <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500"> 
@@ -8,6 +9,134 @@
   </block>
 </swiper>
 
+<view class="vaccine-cont" wx:if="{{userType != '工号'}}">
+  <view class="title">接种进度</view>
+  <view class="vaccine">
+    <view>
+      <view class="border v1 {{vindex>=1?'full':''}}"><block wx:if="{{vindex==1}}"><image src="../../images/vaccine.png" mode="widthFix" class="img-vaccine"></image></block></view>
+      <view>未接种</view>
+    </view>
+    <view>
+      <view class="border v2 {{vindex>=2?'full':''}}"><block wx:if="{{vindex==2}}"><image src="../../images/vaccine.png" mode="widthFix" class="img-vaccine"></image></block></view>
+      <view>已接种第一针</view>
+    </view>
+    <view>
+      <view class="border v3 {{vindex>=3?'full':''}}"><block wx:if="{{vindex==3}}"><image src="../../images/vaccine.png" mode="widthFix" class="img-vaccine"></image></block></view>
+      <view>已接种第二针</view>
+    </view>
+</view>
+
+  <view wx:if="{{!isBindId}}">
+    <button class="submit" disabled="true">请先绑定学号</button>
+  </view>
+  <view wx:elif="{{vindex==3}}">
+    <button class="submit" disabled="true">已完成接种</button>
+  </view>
+  <view wx:elif="{{isyuyue == 0}}">
+    <button bindtap="yuyue" class="submit full">预约接种</button>
+  </view>
+  <view wx:else>
+    <button disabled="true" class="submit">已预约</button>
+  </view>
+
+  <view>
+    <button class="submit full" bindtap="jiankangma">健康码</button>
+  </view>
+</view>
+
+
+
+<view class="desc-cont">
+  <view class="title">
+    全国疫情数据
+  </view>
+
+  <view class="data1 display">
+    <text class="width color1">{{desc.nowConfirm}}</text>
+    <text class="width color2">{{desc.confirm}}</text>
+    <text class="width color3">{{desc.importedCase}}</text>
+  </view>
+  <view class="header display">
+    <view class="width">
+      <text class="header-border">现存确诊</text>
+    </view>
+    <view class="width">
+      <text class="header-border">累计确诊</text>
+    </view>
+    <view class="width">
+      <text class="header-border">累计境外输入</text>
+    </view>
+    
+  </view>
+  <view class="data2 display">
+    <view class="width">较昨日 <text class="color1">{{add.nowConfirm >= 0 ? "+" + add.nowConfirm :add.nowConfirm }}</text></view>
+    <view class="width">较昨日 <text class="color2">{{add.confirm >= 0 ? "+" + add.confirm:add.confirm}}</text></view>
+    <view class="width">较昨日 <text class="color3">{{add.importedCase >= 0 ? "+" + add.importedCase:add.importedCase}}</text></view>
+
+  </view>
+
+  <view class="data1 display" style="margin-top:20px">
+    <text class="width color4">{{desc.heal}}</text>
+    <text class="width color5">{{desc.dead}}</text>
+    <text class="width color6">{{desc.noInfect}}</text>
+  </view>
+  <view class="header display">
+    <view class="width">
+      <text class="header-border">累计治愈</text>
+    </view>
+    <view class="width">
+      <text class="header-border">累计死亡</text>
+    </view>
+    <view class="width">
+      <text class="header-border">现存无症状</text>
+    </view>
+  </view>
+  <view class="data2 display">
+    <view class="width">较昨日 <text class="color4">{{add.heal >= 0 ? "+" + add.heal:add.heal}}</text></view>
+    <view class="width">较昨日 <text class="color5">{{add.dead >= 0 ? "+" + add.dead:add.dead}}</text></view>
+    <view class="width">较昨日 <text class="color6">{{add.noInfect >= 0 ? "+" + add.confirm:add.noInfect}}</text></view>
+  </view>
+  <view class="time">更新时间 {{time}}</view>
+
+
+  <view class="container">
+   <ec-canvas id="mychart-dom-map" canvas-id="mychart-map" ec="{{ec}}"></ec-canvas>
+  </view>
+
+  <view>
+    <view class="title">
+      昨日疫情分布
+    </view>
+    
+    <view class="tr">
+      <text class="th" style="background-color:#F5F5F5">地区</text>
+      <text class="th" style="background-color:#FCF2E8; color:#FF5D00">新增</text>
+      <text class="th" style="background-color:#FDEEEE; color:#F55253">现有</text>
+      <text class="th" style="background-color:#E9F7EC; color:#4D9364">治愈</text>
+      <text class="th" style="background-color:#F3F6F8; color:#4E5A65">死亡</text>
+    </view>
+    <view wx:for="{{areaTree}}" wx:for-item="area" wx:key="name">
+      <view wx:if="{{area.total.nowConfirm > 0}}">     
+        <view class="tr" wx:if="{{index < 5 || isshow}}">
+          <text class="td areaname">{{area.name}}</text>
+          <text class="td">{{area.today.confirm}}</text>
+          <text class="td">{{area.total.nowConfirm}}</text>
+          <text class="td">{{area.total.heal}}</text>
+          <text class="td">{{area.total.wzz}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="v-arrow" bindtap="arrow">
+      <text class="arrowtext" wx:if="{{!isshow}}"></text>
+      <image class="arrow" src="{{isshow ? '../../images/up.png' : '../../images/down.png'}}"></image>
+    </view>
+
+  </view>
+
+  
+</view>
+
+
 <!--新闻列表-->
 <view id='news-list'>
   <view class="list-title">
@@ -15,15 +144,13 @@
     <navigator class="list-title-right" url="../../pages/index/more/more">查看更多</navigator>
   </view>
 
-  <view class='list-item' wx:for="{{newsList}}" wx:for-item="news" wx:key="key" bindtap="newsClick" data-index="{{index}}">
-
+  <view wx:for="{{newsList}}" wx:for-item="news" wx:key="key">
+    <view class='list-item' wx:if="{{index < 3}}" bindtap="newsClick" data-index="{{index}}">
       <view class='news-title' >{{news.title}}</view>
       <view class='news-info'>
         <text>{{news.infoSource}}</text>
         <text>{{news.pubDateStr}}</text>
       </view>
-
-
+    </view>   
   </view>
-
 </view>

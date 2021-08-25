@@ -1,4 +1,5 @@
 // miniprogram/pages/inform/inform.js
+var menus  = require('../../utils/tarBar');
 const app = getApp()
 
 wx.cloud.init({
@@ -16,7 +17,8 @@ Page({
   data: {
     src:'../../images/tongzhidatu.png',
     addBtn_src:'../../images/addBtn.png',
-    delBtn_src:'../../images/delete.png',
+    delBtn_src:'../../images/shanchu.png',
+    userType:app.globalData.userType
   },
 
   /**
@@ -37,6 +39,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(app.globalData.userType == '学号'){
+      this.setData({
+        menus: menus.student,
+        userType:app.globalData.userType
+      })
+    } else{
+      this.setData({
+        menus: menus.teacher,
+        userType:app.globalData.userType
+      })
+    }
+
+    if (typeof this.getTabBar === 'function' &&
+    this.getTabBar()) {
+    this.getTabBar().setData({
+      list: this.data.menus.index,
+      selected: 1
+    })
+  }
+
+
     var that = this
     
     db.collection("Inform").orderBy('pubTime','desc').get({
@@ -44,11 +67,11 @@ Page({
         that.setData({
           informList:res.data
         })
-  
+        
       }
       
     })
-
+    
   },
 
   /**
@@ -94,10 +117,10 @@ Page({
   },
 
   clickBtn:function(res){
-    app.globalData.isadd=false
-    wx.navigateTo({
-      url: '../inform/pub/pub?id='+res.currentTarget.id
-    })
+      app.globalData.isadd=false
+      wx.navigateTo({
+        url: '../inform/pub/pub?id='+res.currentTarget.id
+      })
   },
 
   delBtn:function(e){
@@ -112,7 +135,6 @@ Page({
         console.log(id);
         db.collection('Inform').where({_id:id}).remove({
           success:function(res){
-            console.log(res);
             wx.showToast({
               title: '删除成功',
               duration:1000

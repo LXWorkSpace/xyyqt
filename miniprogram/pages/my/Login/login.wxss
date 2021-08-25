@@ -1,60 +1,71 @@
 /* miniprogram/pages/my/Login/login.wxss */
+.logo{
+  width: 70px;
+  margin: 40px;
+
+}
 
 .cont{
-  background-color: #E3F8F3;
-  height: 100vh;
+  background: white;
+  height: 100vh;  
 }
 
 .title{
-  height: 400rpx;
-  color: #47D1AF;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 400rpx;
-  text-align: center;
-
+  height: 450rpx;
+  color:#555;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
 }
 
 .input-cont{
-  line-height: 45px; 
-  border-radius:20px;
-  border:1px solid #999999;
-  background-color: white;
+  height: 40px;
+  line-height: 40px; 
+  border-bottom:1px solid #dddddd;
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin: 10px auto 10px auto;
+  margin: 20px auto 10px auto;
 
 }
 
 #userId{
-  width: 60%;
-  margin: auto 10px auto 0px;
-
+  height: 100%;
+  width: 75%;
+  margin: auto 40px auto 0px;
+  font-size: 14px;
 }
 #passWord{
-  width: 60%;
-  margin: auto 10px auto 0px;
+  height: 100%;
+  width: 75%;
+  margin: auto 40px auto 0px;
+  font-size: 14px;
 }
 
-
-.login-name{
-  padding-left: 12px;
+.img{
+  margin:auto 0 auto 0;
+  width: 20px;
 }
 
 .radio-cont{
   text-align: center;
-  margin: 30px 0px 30px 0px;
+  margin: 50px 0px 50px 0px;
 }
 .radio{
-  margin:0px 20px 0px 20px
+  color:#666666;
+  font-size: 15px;
+  margin:0px 20px 0px 20px;
+  
 }
 
-.loginBtn{
+.Btn{
   width: 80%;
-  border-radius: 20px;
-  background-color: #47D1AF;
-  color: white;
-  font-weight: 550;
   margin-top: 50px;
+  color: white;
+  font-size: 18px;
+  background: linear-gradient(to right, #6AEFD2, #60ABFE);
+  border-radius: 50px;
+  font-weight: 700;
 }

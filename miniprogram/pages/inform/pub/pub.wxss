@@ -1,38 +1,49 @@
 /* miniprogram/pages/inform/pub/pub.wxss */
+page{
+  color: #212121;
+}
+
 .pub-title{
   background-color: white;
-  border:1px solid #dddddd;
+  border-radius: 10px;
   width: 90%;
   margin: 15px auto 0px auto;
 }
-#pub-title{
-  padding: 10px;
-  font-size: 14px;
+.pub-title-text{
+  padding: 15px 0px 15px 20px;
+  font-size: 20px;
+  font-weight: 700;
+ 
 }
 
 .pub-cont{
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  border:1px solid #dddddd;
+  border-radius: 10px;
   width: 90%;
   margin: 15px auto 0px auto;
+  height: 480px;
 }
-#pub-cont{
-  padding: 10px;
-  font-size: 14px;
+.pub-cont-text{
+  padding: 20px;
+  font-size: 16px;
+  line-height: 27px;
+  height: 100%;
 }
 .wordCount{
   display: flex;
   justify-content: flex-end;
   color: #cccccc;
   font-size: 12px;
-  margin: 12px;
+  margin: 0px 15px 15px 0px;
 }
 
-.submit{
-  background-color: #47D1AF;
+.Btn{
+  background: linear-gradient(to right, #6AEFD2, #60ABFE);
   width: 60%;
   margin-top: 20px;
   color: white;
   font-weight: 550;
-  border-radius: 10px;
+  border-radius: 50px;
 }

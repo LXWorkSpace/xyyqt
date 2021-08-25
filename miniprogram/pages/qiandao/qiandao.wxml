@@ -1,0 +1,131 @@
+<!--miniprogram/pages/qiandao/qiandao.wxml-->
+<view class="allCont">
+  <image src="../../images/background.png" class="img" mode="widthFix"></image>
+  <view class="cont">
+    <view class="title">
+      <text class="title-text">每日填报信息表</text>
+    </view>
+    <view class="line"></view>
+    <view class="detail">
+      <text class="detail-text">请确保信息填写无误</text>
+    </view>
+    <block wx:if="{{!isqiandao}}">
+      <view class="row">
+        <view class="text">
+          今日体温是否高于37℃
+        </view>
+        <switch bindchange="tem" color='#2a79ff' disabled="{{isdisabled}}" checked="{{isTemBtn}}"></switch>
+      </view>
+      <view class="row">
+        <view class="text">
+          今日是否有咽痛、干咳等症状
+        </view>
+        <switch bindchange="ache" color='#2a79ff' disabled="{{isdisabled}}" checked="{{isAcheBtn}}"></switch>
+      </view>
+      <view class="row">
+        <view class="text">
+          今日是否在中高风险地区
+        </view>
+        <switch bindchange="area"  color='#2a79ff' disabled="{{isdisabled}}" checked="{{isAreaBtn}}"></switch>
+      </view>
+      <view class="row">
+        <view class="text">
+          所在地点
+        </view>
+        <view bindtap="getLocation" class="location">
+          <block wx:if="{{islocation}}" ><text style="color: #555555">{{province}} {{city}} {{district}}</text></block>
+          <block wx:else>点击获取位置</block>
+        </view> 
+      </view>
+
+    </block>
+    
+
+    <view class="row">
+      <view class="text">
+        今日是否出校
+      </view>
+      <switch bindchange="goout" color='#2a79ff' disabled="{{isdisabled}}" checked="{{isgooutBtn}}"></switch>
+    </view>
+
+
+    <block wx:if="{{isgooutBtn}}">
+      <view class="row">
+        <view class="text">出校事由</view>
+        <input class="region" type="text" bindinput="reason" maxlength="10"/>
+      </view>
+      <view class="row" bindtap="click">
+      <view class="text">
+        出校区域
+      </view>
+        <picker mode='region' bindchange="regionChange">
+          <view class="region">{{region}}</view>
+        </picker>
+    </view>
+    <view class="row">
+      <view class="text">出校详细地址</view>
+      <input class="region" type="text" bindinput="detailLocation"/>
+    </view>
+
+    <view class="row">
+      <view class="text">
+        出校时间
+      </view> 
+      <view class="selector">
+        <picker mode="date" value="{{godates}}" start="{{godates}}" end="{{godates}}" bindchange="goDateChange">
+            <view class="picker">
+              {{godates}}
+            </view>
+          </picker>
+
+      
+
+          <picker mode="time" value="{{gotimes}}" start="00:00" end="23:59" bindchange="goTimeChange">
+            <view class="picker">
+            {{gotimes}}
+            </view>
+          </picker>
+      </view>
+    </view>
+
+    <view class="row">
+      <view class="text">
+        归校时间
+      </view> 
+      <view class="selector">
+        <picker mode="date" value="{{godates}}" start="{{godates}}" end="{{godates}}" bindchange="returnDateChange">
+            <view class="picker">
+              {{returndates}}
+            </view>
+          </picker>
+
+          <picker mode="time" value="{{returntimes}}" start="{{gotimes}}" end="23:59" bindchange="returnTimeChange">
+            <view class="picker">
+              {{returntimes}}
+            </view>
+          </picker>
+      </view>
+    </view>
+
+  </block>
+
+</view>
+
+<block wx:if="{{!isBindId}}">
+    <button class='submit' disabled="true">请绑定学号</button>
+  </block>
+
+  <block wx:elif="{{!isqiandao}}">
+    <button class="submit" bindtap="submit">签到<block wx:if="{{isgooutBtn}}">并申请出校</block></button>
+  </block>
+  <block wx:elif="{{isqiandao && isgoout == 0}}">
+    <button class='submit' bindtap="submit2">申请出校</button>
+  </block>
+  <block wx:else>
+    <button class='submit' disabled="true">已签到<block wx:if="{{isgoout != 0}}">并申请出校</block></button>
+  </block>
+  
+
+  
+
+</view>

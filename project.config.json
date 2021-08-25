@@ -1,5 +1,6 @@
 {
   "miniprogramRoot": "miniprogram/",
+  "cloudbaseRoot": "cloudbase/",
   "cloudfunctionRoot": "cloudfunctions/",
   "setting": {
     "urlCheck": true,
@@ -39,7 +40,7 @@
   },
   "appid": "wx90569bf4baa3a4b1",
   "projectname": "xxyqt",
-  "libVersion": "2.14.1",
+  "libVersion": "2.16.1",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {

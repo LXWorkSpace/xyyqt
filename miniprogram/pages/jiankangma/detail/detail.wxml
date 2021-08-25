@@ -1,0 +1,39 @@
+<!--pages/res/res.wxml-->
+<view class="newQrcode" style="display: block;">
+  <view>
+    <view class="epide_outer">
+      <view class="logo">
+        <view><image src="../../../images/jiankangma1.png" alt="" class="logoImg"></image></view>
+        <span>首都经济贸易大学</span>
+      </view>
+      <view class="bjc"><image src="../../../images/jiankangma2.png" alt="" class="bkImg"></image>
+        <view class="users">
+          <ul>
+            <li><span>姓名</span><span>{{name}}</span></li>
+            <li><span>学工号</span><span>{{id}}</span></li>
+          </ul>
+          <ul>
+            <li style="width: 100%;"><span>单位</span><span>{{college}}</span></li>
+          </ul>
+        </view>
+      </view>
+    </view>
+    <view class="content mastercontent">
+      <view class="location_tit">
+        <view class="qrcode-wrap master">
+          <view class="title-master"><span class="left">通行码</span><span class="right"><em>扫码时间：{{time}}</em></span></view>
+          <view class="bignocode-wrap"><image src="../../../images/jiankangma3.png" alt=""></image>
+            <p class="">通行成功</p>
+          </view>
+        </view>
+        <view class="line"></view>
+        <view class="buaaszwz">
+          <view class="szwz-header"><span class="left">所在位置</span> <span class="right">{{location}}</span></view>
+        </view>
+        <view class="line"></view>
+        <view class="other-foot"><div>您的出入校申请时间如下：</div><div>出校时间 {{date}}</div><div>入校时间 {{date}}</div></view>
+      </view>
+    </view>
+  </view>
+
+</view>

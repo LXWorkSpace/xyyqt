@@ -1,0 +1,7 @@
+<!--miniprogram/pages/qiandao/qdsuccess/qdsuccess.wxml-->
+<view class="cont">
+  <image src="../../../images/success.png" mode="widthFix"></image>
+  <view class="text">{{text[index]}}成功</view>
+</view>
+
+<button class="backBtn" bindtap="backBtn">返回首页</button>

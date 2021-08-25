@@ -1,3 +1,4 @@
+var format  = require('../../../utils/util');
 // miniprogram/pages/my/Login/login.js
 const app = getApp();
 wx.cloud.init({
@@ -20,6 +21,7 @@ Page({
     userId:'',
     loginType:'Student',
     passWord:'',
+    userType:app.globalData.userType
   },
 
   /**
@@ -40,7 +42,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+  console.log(app.globalData);
   },
 
   /**
@@ -61,7 +63,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+   
   },
 
   /**
@@ -83,11 +85,13 @@ Page({
   },
   radioInfo:function(e){
     let index=e.currentTarget.dataset.index
-    app.globalData.userType=this.data.items[index].type
+    this.setData({
+      userType:this.data.items[index].type
+    })
   },
 
   useridInput:function(e){
-      this.data.userId=e.detail.value
+      this.data.userId=parseInt(e.detail.value)
   },
 
   passwordInput:function(e){
@@ -113,14 +117,26 @@ Page({
               icon:'none',
               duration:3000
             })
-          }
-          else if(that.data.passWord == res.data[0].passWord){
-            app.globalData.isBindId=true
-            app.globalData.userId = that.data.userId
-            
-            wx.switchTab({
-             url: '../my',
-            })
+          }else if(that.data.passWord == res.data[0].passWord){
+            if(that.data.loginType == 'Student'){
+              app.globalData.isBindId=true
+              app.globalData.userId = that.data.userId
+              app.globalData.userType = that.data.userType
+              app.globalData.vindex = res.data[0].vaccine.vindex
+              app.globalData.isqiandao = res.data[0].qiandao.isqiandao
+              app.globalData.isgoout = res.data[0].goout.isgoout
+              app.globalData.isyuyue = res.data[0].vaccine.isyuyue
+              wx.switchTab({
+               url: '../my',
+              })
+            }else{
+              app.globalData.isBindId=true;
+              app.globalData.userId = that.data.userId
+              app.globalData.userType = that.data.userType
+              wx.switchTab({
+                url: '../my',
+              })
+            }
           }else{
             wx.showToast({
               title: '学号/工号或密码填写错误',
@@ -133,5 +149,10 @@ Page({
 
    }
 
+  },
+  regBtn:function(){
+    wx.navigateTo({
+      url: '../Login/register/register',
+    })
   }
 })

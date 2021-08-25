@@ -1,0 +1,30 @@
+/* miniprogram/pages/index/yysuccess/yysuccess.wxss */
+.cont{
+  background-color: white;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #dfdfdf;
+}
+image{
+  width: 70px;
+  margin: 70px 0px 60px 0px;
+}
+
+.text{  
+  font-weight: 700;
+  font-size: 24px;
+  color: #999999;
+  letter-spacing: 3rpx;
+}
+
+.backBtn{
+  background-color: white;
+  width: 68%;
+  margin-top: 35px;
+  color: #66D9BD;
+  font-weight: 700;
+  border-radius: 50px;
+  border: 1px solid #66D9BD;
+}

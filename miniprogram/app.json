@@ -1,4 +1,5 @@
 {
+  "cloud": true,
   "pages": [
     "pages/index/index",
     "pages/inform/inform",
@@ -7,18 +8,28 @@
     "pages/index/more/more",
     "pages/index/more/detail/detail",
     "pages/my/Login/login",
-    "pages/inform/pub/pub"
+    "pages/inform/pub/pub",
+    "pages/qiandao/qiandao",
+    "pages/qiandao/qdsuccess/qdsuccess",
+    "pages/my/Login/register/register",
+    "pages/index/yysuccess/yysuccess",
+    "pages/my/update/update",
+    "pages/my/sq/sq",
+    "pages/my/sp/sp",
+    "pages/my/sp/sp-detail/sp-detail",
+    "pages/jiankangma/jiankangma",
+    "pages/jiankangma/detail/detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#efefef",
     "navigationBarTitleText": "校园疫情通",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#fefefe",
-    "backgroundTextStyle": "light",
-    "enablePullDownRefresh": true
+    "backgroundTextStyle": "light"
   },
   "tabBar": {
-    "color": "#000000",
+    "custom": true,
+    "color": "#DCDCDC",
     "selectedColor": "#47D1AF",
     "list": [
       {
@@ -34,6 +45,12 @@
         "text": "通知"
       },
       {
+        "pagePath": "pages/qiandao/qiandao",
+        "iconPath": "images/qiandao.png",
+        "selectedIconPath": "images/qiandao_ed.png",
+        "text": "签到"
+      },
+      {
         "pagePath": "pages/static/static",
         "iconPath": "images/tongji.png",
         "selectedIconPath": "images/tongji_ed.png",
@@ -47,5 +64,11 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "usingComponents": {},
   "sitemapLocation": "sitemap29.json"
 }

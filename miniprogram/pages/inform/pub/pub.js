@@ -59,7 +59,8 @@ Page({
    */
   onShow: function () {
     this.setData({
-      isadd:app.globalData.isadd
+      isadd:app.globalData.isadd,
+      userType:app.globalData.userType
     })
   },
 
@@ -165,7 +166,34 @@ Page({
       wordCount:e.detail.cursor
      })
     
-  }
-
+  },
+  delBtn:function(e){
+    var that = this
+    wx.showModal({
+      cancelColor: 'cancelColor',
+      title:'删除公告',
+      content:'是否确认删除',
+      success:function(res){
+        if(res.confirm){
+          db.collection('Inform').where({_id:that.data._id}).remove({
+            success:function(res){
+              console.log(res);
+              wx.showToast({
+                title: '删除成功',
+                duration:1000
+              })
+              setTimeout(function () {
+                wx.switchTab({
+                  url: '../inform',
+                })
+               }, 1000)
+  
+            }
+          })
+        }
+      }
+    })
+   
+    }
 
 })

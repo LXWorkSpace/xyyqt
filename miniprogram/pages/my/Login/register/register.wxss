@@ -1,0 +1,45 @@
+/* miniprogram/pages/my/Login/register/register.wxss */
+.title{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #47D1AF;
+  margin:15px
+}
+.baseCont{
+  border-radius: 20px;
+  background-color: white;
+  width: 90%;
+  margin: 15px auto;
+}
+
+.row{
+
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+  align-items: center;
+  font-size: 14px;
+  padding:0px 20px 0px 20px
+}
+
+.picker{
+  width: 180px;
+}
+
+input{
+  width: 180px;
+}
+
+.placeholderStyle{
+  color: #bcbcbc;
+}
+
+.regBtn{
+  width: 80%;
+  background-color: #47D1AF;
+  color: white;
+  margin-top: 30px;
+  border-radius: 50px;
+}
+

@@ -1,4 +1,5 @@
 //app.js
+
 App({
   globalData:{
     userId:'',
@@ -6,7 +7,10 @@ App({
     userType:'学号',
     isLogin:false,
     isBindId:false,
-    isadd:false
-  }
-  
+    isadd:false,
+    vindex:0,
+    isqiandao:false,
+    isgoout:0,
+    isyuyue:0,
+  },
 })

@@ -1,0 +1,108 @@
+/* miniprogram/pages/qiandao/qiandao.wxss */
+page{
+  background-color:#baeee1
+}
+
+
+.cont{
+  position: relative;
+  bottom:520px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 25px;
+  margin: 0px 20px 0px 20px;
+}
+.row{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.text{
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  padding-left: 20px;
+}
+switch{
+ 
+  zoom: .8;
+  padding-right: 20px;
+}
+
+.location{
+  color: #BFBFBF;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.region{
+  padding: 5px 10px 5px 10px;
+  border-bottom: 1px solid #DDDDDD;
+  margin-right: 10px;
+  font-size: 14px;
+  width: 180px;
+}
+
+.selector{
+  padding: 5px 10px 5px 10px;
+  border-bottom: 1px solid #DDDDDD;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 10px;
+  width: 180px;
+  font-size: 14px;
+
+}
+
+.submit{
+  position: relative;
+  bottom: 520px;
+  background-color: #47d1af;
+  width: 60%;
+  margin-top: 35px;
+  color: white;
+  font-weight: 700;
+  border-radius: 50px;
+}
+
+
+.img{
+  width: 100%;
+}
+
+.allCont{
+  height: 1000px;
+}
+
+
+.title{
+  text-align: center;
+  padding: 10px 0px 5px 0px;
+  border-radius: 20px;
+  width: 260px;
+  margin: 10px auto;
+}
+.title-text{
+  color: #47d1af;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.line{
+   border-top: 8px dotted #66a6b1;
+   width: 260px;
+   margin: 20px auto 10px auto;
+}
+
+.detail{
+  margin: 10px auto;
+  text-align: center;
+}
+.detail-text{
+  color: #bfbfbf;
+  font-size: 12px;
+}

@@ -1,23 +1,20 @@
 /* miniprogram/pages/index/index.wxss */
-
-/*swiper样式*/
-
+page{
+  background-color: white;
+  
+  }
 
 .slide-image{
   width: 100%;
-  border-top:1px solid #DDDDDD;
-  border-bottom:1px solid #DDDDDD;
 }
 
 
 .list-title{
-  margin-top: 5px;
   padding:10px;
-  border-top:1px solid #DDDDDD;
-  border-bottom:1px solid #DDDDDD;
   display: flex;
   justify-content: space-between;
-  background-color: white;
+  border-bottom:1px solid #DDDDDD;
+  border-top:1px solid #DDDDDD;
 }
 
 .list-title-left{
@@ -36,9 +33,14 @@
   border-bottom:1px solid #DDDDDD;
 }
 
+#news-list{
+  height: 400px;
+}
+
 .news-title{
   font-size: 16px;
   margin-bottom: 30px;
+  
 }
 
 .news-info{
@@ -46,4 +48,191 @@
   justify-content: space-between;
   font-size: 12px;
   color:#AAAAAA
+}
+
+
+
+
+.title{
+  background-color: white;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #00000091;
+  padding: 10px;
+}
+
+.display{
+  display: flex;
+  justify-content: space-around;
+}
+
+.header{
+  font-size: 12px;
+}
+.header-border{
+  display: inline-block;
+  background-color: #eeeeee;
+  padding: 3px;
+  width: 80px;
+}
+.data1{
+  font-weight: 700;
+  font-Family: "'Microsoft YaHei', Arial, 'Avenir', Helvetica, sans-serif"
+}
+.data2{
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+
+.width{
+  width: 33.3%;
+  text-align: center;
+  margin:7rpx auto;
+}
+
+.color1{
+  color: #E57631;
+}
+.color2{
+  color: #E61C1D;
+}
+.color3{
+  color: #BE2121;
+}
+.color4{
+  color: #4E8BE6;
+}
+.color5{
+  color: #4E5A65;
+}
+.color6{
+  color: #AE3AC6;
+}
+
+.arrow{
+  width: 20px;
+  height: 10px;
+}
+.v-arrow{
+  text-align: center;
+}
+
+.time{
+  color: #bbbbbb;
+  padding: 5px 0px 0px 10px;
+  font-size: 12px;
+}
+
+.tr{
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  line-height: 50px;
+}
+
+.th{
+  width: 20%;
+  text-align: center;
+}
+
+.td{
+  color: #222222;
+  width: 20%;
+  text-align: center;
+  font-weight: 700;
+  font-Family: "'Microsoft YaHei', Arial, 'Avenir', Helvetica, sans-serif"
+ 
+}
+
+.container{
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+#mychart-dom-map{
+  position: relative;
+  width: 100%;
+  padding-top: 20rpx;
+  height: 570rpx;
+}
+
+.areaname{
+  color: #4190F5;
+}
+
+.arrowtext{
+  color: #888888;
+  font-size: 13px;
+}
+.arrow{
+  width: 15px;
+  height: 10px;
+}
+.v-arrow{
+  text-align: center;
+  margin: 8px 0px 10px 0px;
+}
+.vaccine-cont{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-bottom:1px solid #DDDDDD;
+  border-top:1px solid #DDDDDD;
+  padding-bottom: 40px;
+
+}
+
+.v1{
+
+  margin-right: 3px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  
+}
+.v2{
+  margin-right: 3px;
+}
+.v3{
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.border{
+  border: 1px solid #47D1AF;
+  height: 6px;
+  width: 90px;
+  margin-bottom: 20px;
+}
+
+.vaccine{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666666;
+  text-align: center;
+}
+
+.submit{
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  border-radius: 20px;
+  width: 150px;
+  margin-top: 40px;
+  border:1px solid
+}
+
+.img-vaccine{
+  width: 28px;
+  position: relative;
+  bottom: 10px;
+}
+
+
+.full{
+  background-color:#47D1AF
 }

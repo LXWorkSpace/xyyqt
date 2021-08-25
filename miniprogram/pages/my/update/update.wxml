@@ -1,0 +1,45 @@
+<!--miniprogram/pages/my/update/update.wxml-->
+<!--miniprogram/pages/my/Login/register/register.wxml-->
+<view class="cont">
+    <view class="title">
+      基本信息
+    </view>
+    <view class="baseCont">
+    <view class="row">
+      <text class="info-type">真实姓名</text>
+      <input type="text" value="{{name}}" placeholder="请输入真实姓名" bindinput="nameInput" placeholder-class="placeholderStyle" />
+    </view>
+
+    <view class="row">
+      <text class="info-type">手机号</text>
+      <input type="number" value="{{phoneNum}}" placeholder="请输入手机号" bindinput="phoneNumInput" placeholder-class="placeholderStyle" />
+    </view>
+
+    <view class="row">
+      <text class="info-type">家庭住址省区</text>
+        <picker mode='region' bindchange="regionChange">
+            <view class="picker">{{region}}</view>
+        </picker>
+    </view>
+    <view class="row">
+      <text class="info-type">家庭详细住址</text>
+      <input type="text" value="{{address}}" placeholder="请输入家庭详细住址" bindinput="addressInput" placeholder-class="placeholderStyle"/>
+    </view>
+    <view class="row">
+      <text class="info-type">所在学院</text>
+        <picker range="{{colleges}}" bindchange="collegeChange">
+            <view class="picker">{{college}}</view>
+        </picker>
+    </view>
+    <view class="row">
+      <text class="info-type">专业</text>
+      <input type="text" value="{{major}}" placeholder="请输入专业" bindinput="majorInput" placeholder-class="placeholderStyle"/>
+    </view>
+
+  </view>
+
+</view>
+
+<view>
+  <button bindtap="regBtn" class="regBtn">确认修改</button>
+</view>

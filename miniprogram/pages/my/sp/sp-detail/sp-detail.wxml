@@ -1,0 +1,74 @@
+<!--miniprogram/pages/my/sp/sp-detail/sp-detail.wxml-->
+<view class="bg"></view>
+<block wx:if="{{type == 'goout'}}">
+  <view class="cont">
+    <view class="row">
+      <text class="title">姓名</text>
+      <text class="info">{{list.name}}</text>
+    </view>
+    <view class="row">
+      <text class="title">学号</text>
+      <text class="info">{{list.userId}}</text>
+    </view>
+    <view class="row">
+      <text class="title">学院</text>
+      <text class="info">{{list.college}}</text>
+    </view>
+    <view class="row">
+      <text class="title">专业</text>
+      <text class="info">{{list.major}}</text>
+    </view>
+    <view class="row">
+      <text class="title">外出事由</text>
+      <text class="info">{{list.goout.reason}}</text>
+    </view>
+    <view class="row">
+      <text class="title">出校区域</text>
+      <text class="info">{{list.goout.gooutLocation}}</text>
+    </view>
+    <view class="row">
+      <text class="title">出校详细地址</text>
+      <text class="info">{{list.goout.gooutDetailLocation}}</text>
+    </view>
+    <view class="row">
+      <text class="title">出校时间</text>
+      <text class="info">{{list.goout.godates}} {{list.goout.gotimes}}</text>
+    </view>
+    <view class="row">
+      <text class="title">归校时间</text>
+      <text class="info">{{list.goout.returndates}} {{list.goout.returntimes}}</text>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{type == 'vaccine'}}">
+  <view class="cont">
+    <view class="row">
+      <text class="title">姓名</text>
+      <text class="info">{{list.name}}</text>
+    </view>
+    <view class="row">
+      <text class="title">学号</text>
+      <text class="info">{{list.userId}}</text>
+    </view>
+    <view class="row">
+      <text class="title">学院</text>
+      <text class="info">{{list.college}}</text>
+    </view>
+    <view class="row">
+      <text class="title">专业</text>
+      <text class="info">{{list.major}}</text>
+    </view>
+
+    <view class="row">
+      <text class="title">接种疫苗</text>
+      <text class="info">{{list.vaccine.vindex == 1? '第一针疫苗接种申请' : '第二针疫苗接种申请'}}</text>
+    </view>
+
+  </view>
+</block>
+
+《<view class="buttons">
+  <button class="button" bindtap="button1">批准</button>
+  <button class="button" bindtap="button2">驳回</button>
+</view>

@@ -1,0 +1,56 @@
+/* miniprogram/pages/my/sp/sp.wxss */
+page{
+  background-color: white;
+  padding-top: 20px;
+}
+.title-cont{
+  background-color: white;
+  box-shadow: 2px 2px 10px 1px #c6d6ff;
+  width: 90%;
+  border-radius: 5px;
+  margin: 12px auto;
+  padding: 5px 0px;
+  border-left: 5px solid #5e8bff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time-cont{
+  font-size: 13px;
+  color: #888888;
+}
+
+.info-cont{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px 20px 10px 20px;
+}
+
+.name{
+  font-size: 14px;
+  color: #888888;
+}
+.reason{
+  font-size: 15px;
+  font-weight: 700;
+  color: #555555;
+}
+
+.sp-color{
+  color: #5e8bff;
+  font-size: 14px;
+}
+
+.check{
+  width: 5%;
+  margin: 0px 10px;
+}
+
+.info{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}

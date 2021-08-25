@@ -1,4 +1,8 @@
 /* miniprogram/pages/inform/inform.wxss */
+page{
+  background-color: #fafafa;
+}
+
 .image{
   width: 100%;
   border-top:1px solid #DDDDDD;
@@ -6,39 +10,33 @@
 }
 
 
-.list-title{
-  font-weight: 700;
-  padding:10px;
-  border-top:1px solid #DDDDDD;
-  border-bottom:1px solid #DDDDDD;
-  background-color: white;
-  font-size: 15px;
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between
+.delbtn{
+  width: 24px;
 }
-
-.btn{
-  width: 20px;
-}
-
-.inform-list{
- background-color: white; 
- border-bottom: 1px solid #dddddd;
- padding: 2px;
- line-height: 30px;
- font-size: 16px;
-
+.addbtn{
+  width: 40px;
+  margin:10px auto
 }
 
 .inform-cont{
+  position: relative;
+  bottom: 60px;
+  width: 90%;
+  margin: 10px auto;
+  background-color: white;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100px;
+  line-height: 30px;
+  border-bottom: 2px solid #f5f5f5;
+  box-shadow: 0px 5px 10px 0px #dddddd;
 }
 
 .title-cont{
   width: 100%;
+  margin: 10px;
 }
 
 .inform-title{
